@@ -1,0 +1,302 @@
+# JPQL_V1
+import turtle
+from random import randint
+import numpy as np
+import matplotlib.pyplot as plt
+
+############################################################## 
+#Matrix = np.matrix((17,6))
+
+def MyState(dist,theta):
+    State =0
+    if(theta>180):
+        theta =360-theta
+    
+    if (10<dist) and (dist<15):     #D1
+        if(0<theta) and(theta<30):
+             State =1
+        if(30<theta) and(theta<60):
+             State =2
+        if(60<theta) and(theta<90):
+             State =3
+        if(90<theta) and(theta<120):
+             State =4
+        if(120<theta) and(theta<150):
+             State =5
+        if(150<theta) and(theta<180):
+            State =6
+    if (15<dist) and (dist<20):    #D2
+        if(0<theta) and(theta<30):
+             State =7
+        if(30<theta) and(theta<60):
+             State =8
+        if(60<theta) and(theta<90):
+             State =9
+        if(90<theta) and(theta<120):
+             State =10
+        if(120<theta) and(theta150):
+             State =11
+        if(150<theta) and(theta<180):
+            State =12
+    if (20<dist) and (dist<25):    #D3
+        if(0<theta) and(theta<30):
+             State =13
+        if(30<theta) and(theta<60):
+             State =14
+        if(60<theta) and(theta<90):
+             State =15
+        if(90<theta) and(theta<120):
+             State =16
+        if(120<theta) and(theta<150):
+             State =17
+        if(150<theta) and(theta<180):
+            State =18
+    if (25<dist) and (dist<30):    #D4
+        if(0<theta) and(theta<30):
+             State =19
+        if(30<theta) and(theta<60):
+             State =20
+        if(60<theta) and(theta<90):
+             State =21
+        if(90<theta) and(theta<120):
+             State =22
+        if(120<theta) and(theta<150):
+             State = 23
+        if(150<theta) and(theta<180):
+            State =24
+    if (30<dist) and (dist<35):     #D5
+        if(0<theta) and(theta<30):
+             State =25
+        if(30<theta) and(theta<60):
+             State =26
+        if(60<theta) and(theta<90):
+             State =27
+        if(90<theta) and(theta<120):
+             State =28
+        if(120<theta) and(theta<150):
+             State =29
+        if(150<theta) and(theta<180):
+            State=30
+    if (35<dist) and (dist<40):     #D6
+        if(0<theta) and(theta<30):
+             State =31
+        if(30<theta) and(theta<60):
+             State =32
+        if(60<theta) and(theta<90):
+             State =33
+        if(90<theta) and(theta<120):
+             State =34
+        if(120<theta) and(theta<150):
+             State =35
+        if(150<theta) and(theta<180):
+            State=36
+    if (40<dist) and (dist<45):   #D7
+        if(0<theta) and(theta<30):
+             State =37
+        if(30<theta) and(theta<60):
+             State =38
+        if(60<theta) and(theta<90):
+             State =39
+        if(90<theta) and(theta<120):
+             State =40
+        if(120<theta) and(theta<150):
+             State =41
+        if(150<theta) and(theta<180):
+            State=42
+    if (45<dist) and (dist<50):     #D8
+        if(0<theta) and(theta<30):
+             State =43
+        if(30<theta) and(theta<60):
+             State =44
+        if(60<theta) and(theta<90):
+             State =45
+        if(90<theta) and(theta<120):
+             State =46
+        if(120<theta) and(theta<150):
+             State =47
+        if(150<theta) and(theta<180):
+            State=48
+    if (50<dist) and (dist<55):         #D9
+        if(0<theta) and(theta<30):
+             State =49
+        if(30<theta) and(theta<60):
+             State =50
+        if(60<theta) and(theta<90):
+             State =51
+        if(90<theta) and(theta<120):
+             State =52
+        if(120<theta) and(theta<150):
+             State =53
+        if(150<theta) and(theta<180):
+            State=54
+    if (55<dist) and (dist<60):          #D10
+        if(0<theta) and(theta<30):
+             State =55
+        if(30<theta) and(theta<60):
+             State =56
+        if(60<theta) and(theta<90):
+             State =57
+        if(90<theta) and(theta<120):
+             State =58
+        if(120<theta) and(theta<150):
+             State =59
+        if(150<theta) and(theta<180):
+            State=60
+    if (60<dist) and (dist<65):        #D11
+        if(0<theta) and(theta<30):
+             State =61
+        if(30<theta) and(theta<60):
+             State =62
+        if(60<theta) and(theta<90):
+             State =63
+        if(90<theta) and(theta<120):
+             State =64
+        if(120<theta) and(theta<150):
+             State =65
+        if(150<theta) and(theta<180):
+            State=66
+    if (65<dist) and (dist<70):        #D12
+        if(0<theta) and(theta<30):
+             State =67
+        if(30<theta) and(theta<60):
+             State =68
+        if(60<theta) and(theta<90):
+             State =69
+        if(90<theta) and(theta<120):
+             State =70
+        if(120<theta) and(theta<150):
+             State =71
+        if(150<theta) and(theta<180):
+            State=72
+    if (70<dist) and (dist<75):       #D13
+        if(0<theta) and(theta<30):
+             State =73
+        if(30<theta) and(theta<60):
+             State =74
+        if(60<theta) and(theta<90):
+             State =75
+        if(90<theta) and(theta<120):
+             State =76
+        if(120<theta) and(theta<150):
+             State =77
+        if(150<theta) and(theta<180):
+            State=78
+    if (75<dist) and (dist<80):       #D14
+        if(0<theta) and(theta<30):
+             State =79
+        if(30<theta) and(theta<60):
+             State =80
+        if(60<theta) and(theta<90):
+             State =81
+        if(90<theta) and(theta<120):
+             State =82
+        if(120<theta) and(theta<150):
+             State =83
+        if(150<theta) and(theta<180):
+            State=84
+    if (80<dist) and (dist<85):     #D15
+        if(0<theta) and(theta<30):
+             State =85
+        if(30<theta) and(theta<60):
+             State =86
+        if(60<theta) and(theta<90):
+             State =87
+        if(90<theta) and(theta<120):
+             State =88
+        if(120<theta) and(theta<150):
+             State =89
+        if(150<theta) and(theta<180):
+            State=90
+    if (85<dist) and (dist<90):      #D16
+        if(0<theta) and(theta<30):
+             State =91
+        if(30<theta) and(theta<60):
+             State =92
+        if(60<theta) and(theta<90):
+             State =93
+        if(90<theta) and(theta<120):
+             State =94
+        if(120<theta) and(theta<150):
+             State =95
+        if(150<theta) and(theta<180):
+            State=96
+    if (90<dist) and (dist<95):     #D17
+        if(0<theta) and(theta<30):
+             State =97
+        if(30<theta) and(theta<60):
+             State =98
+        if(60<theta) and(theta<90):
+             State =99
+        if(90<theta) and(theta<120):
+             State =100
+        if(120<theta) and(theta<150):
+             State =101
+        if(150<theta) and(theta<180):
+            State=102
+    
+    print dist,theta,State
+   #np.savetxt('positions.txt',dist,delimiter',',fmt="%s")   # X is an array
+   
+###################################################################
+#def Linked():
+
+
+###################################################################
+
+#image = "JP.png"
+#screen.addshape(image)
+#turtle.shape(image)
+
+turtle.setup(800,600) #tamano de la ventana
+
+wn = turtle.Screen()
+wn.bgcolor("white")
+wn.title("Simple movement")
+
+michelangelo = turtle.Turtle()
+michelangelo.shape("circle")
+#michelangelo.shape("image")
+michelangelo.color("blue")
+
+target = turtle.Turtle()
+target.shape("circle")
+target.color("Red")
+
+nCicles= 10
+
+Rmax=100
+#print d
+d = np.zeros(nCicles)
+distance = np.zeros(nCicles)
+XCoord = np.zeros(nCicles)
+YCoord = np.zeros(nCicles)
+Angle = np.zeros(nCicles)
+
+#hile(d<Rmax):
+    
+for i in range (nCicles):
+    
+    while(d[i]<Rmax):
+        
+        d[i] = michelangelo.distance(target.pos())
+       # print d[i]
+    
+        michelangelo.forward(randint(-20,20))
+        michelangelo.left(randint(0,360))
+        
+        michelangelo.pos()
+        Angle[i]= michelangelo.towards(0,0)
+   
+        distance[i] = michelangelo.distance(0,0)
+        XCoord[i] = michelangelo.xcor()
+        YCoord[i] = michelangelo.ycor()
+       
+        target.home()
+        MyState(distance[i], Angle[i])
+    
+#MyState(distance)#, XCoord, YCoord)   
+    
+plt.plot(distance)
+plt.show()
+wn.exitonclick()
+
